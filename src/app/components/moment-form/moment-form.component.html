@@ -1,18 +1,34 @@
-<form action="">
+<form (ngSubmit)="submit()" [formGroup]="momentForm" #formDir="ngForm">
   <fieldset class="form-group">
     <label for="title">Título:</label>
-    <input type="text" id="title" name="title" placeholder="Digite o título do momento" class="form-control" required>
+    <input
+      type="text"
+      id="title"
+      name="title"
+      placeholder="Digite o título do momento"
+      class="form-control"
+      formControlName="title"
+      required
+    />
+
+    <p *ngIf="title.invalid && formDir.submitted" class="validation-error">
+      <span *ngIf="title.errors?.['required']">O título é obrigatório!</span>
+    </p>
   </fieldset>
 
   <fieldset class="form-group">
     <label for="description">Descrição:</label>
-    <textarea placeholder="Digite a descrição do momento" required></textarea>
+    <textarea placeholder="Digite a descrição do momento" formControlName="description" required></textarea>
+
+    <p *ngIf="description.invalid && formDir.submitted" class="validation-error">
+      <span *ngIf="description.errors?.['required']">A descrição é obrigatória!</span>
+    </p>
   </fieldset>
 
   <fieldset class="form-group">
     <label for="image">Anexe o seu momento mais marcante:</label>
-    <input type="file" id="image" name="image" required>
+    <input type="file" id="image" name="image" required />
   </fieldset>
 
-  <input type="submit" value="{{ btnText }}">
+  <input type="submit" value="{{ btnText }}" />
 </form>
