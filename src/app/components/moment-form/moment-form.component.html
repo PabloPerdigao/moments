@@ -1,0 +1,18 @@
+<form action="">
+  <fieldset class="form-group">
+    <label for="title">Título:</label>
+    <input type="text" id="title" name="title" placeholder="Digite o título do momento" class="form-control" required>
+  </fieldset>
+
+  <fieldset class="form-group">
+    <label for="description">Descrição:</label>
+    <textarea placeholder="Digite a descrição do momento" required></textarea>
+  </fieldset>
+
+  <fieldset class="form-group">
+    <label for="image">Anexe o seu momento mais marcante:</label>
+    <input type="file" id="image" name="image" required>
+  </fieldset>
+
+  <input type="submit" value="{{ btnText }}">
+</form>
