@@ -27,7 +27,7 @@
 
   <fieldset class="form-group">
     <label for="image">Anexe o seu momento mais marcante:</label>
-    <input type="file" id="image" name="image" required />
+    <input type="file" (change)="onFileSelected($event)" id="image" name="image" required />
   </fieldset>
 
   <input type="submit" value="{{ btnText }}" />
