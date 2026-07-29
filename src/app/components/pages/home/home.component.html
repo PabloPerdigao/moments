@@ -1,1 +1,24 @@
-<p>Página Home</p>
+<div class="home-container">
+  <h1>Bem-vindo ao Moments</h1>
+  <div class="search-container">
+    <form action=""><fa-icon [icon]="faSearch"></fa-icon>
+    <input type="text" placeholder="Busque por um momento..."(input)="search($event)" ></form>
+  </div>
+
+  <div *ngIf="moments.length > 0; else noMoments">
+    <div class="moments-container">
+      <div class="moment" *ngFor="let moment of moments">
+        <img src="{{ baseApiUrl }}uploads/{{ moment.image }}" alt="" />
+        <h3>{{ moment.title }}</h3>
+        <p class="date">Em: {{ moment.created_at }}</p>
+        <p class="date">Em: {{ moment.comments!.length }}</p>
+        <p><a routerLink="moments/{{ moment.id }}">Detalhes</a></p>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noMoments>
+    <h2>Nenhum momento encontrado.</h2>
+  </ng-template>
+</div>
+F
