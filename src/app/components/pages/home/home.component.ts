@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     // Chamada do serviço para buscar todos os momentos do backend
-    this.momentService.getMomments().subscribe((items) => {
+    this.momentService.getMoments().subscribe((items) => {
       const data = items.data;
 
       // Formata a data de criação de cada momento para o formato local 'pt-BR'
