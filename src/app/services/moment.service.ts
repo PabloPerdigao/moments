@@ -38,4 +38,10 @@ export class MomentService {
     const url = `${this.apiUrl}/${id}`;
     return this.http.delete(url);
   }
+
+  // Método para atualizar um momento específico pelo ID, recebendo os dados atualizados em um objeto FormData
+  updatemoment(id: number, formData: FormData): Observable<FormData> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.put<FormData>(url, formData);
+  }
 }

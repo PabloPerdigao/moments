@@ -5,7 +5,10 @@
       {{ moment.title }}
     </span>
   </h2>
-  <app-moment-form [momentData]="moment" [btnText]="btnText">
-
+  <app-moment-form
+    (onSubmit)="editHandler($event)"
+    [momentData]="moment"
+    [btnText]="btnText"
+  >
   </app-moment-form>
 </div>
